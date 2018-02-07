@@ -8,10 +8,10 @@ import akka.http.scaladsl.server.Directives._
 object Main {
 
   def main(args: Array[String]) {
-    implicit val actorSystem       = ActorSystem("miroservice-actor-system")
+    implicit val actorSystem       = ActorSystem("akka-http-schema-registry")
     implicit val actorMaterializer = ActorMaterializer()
     implicit val executor          = actorSystem.dispatcher
-    Http().bindAndHandle(new HttpService().route, "localhost", 8080)
+    Http().bindAndHandle(new HttpService().route, "0.0.0.0", 8080)
     println("server started at 8080")
   }
 

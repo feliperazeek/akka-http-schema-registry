@@ -79,7 +79,7 @@ trait SchemaRegistryStore {
     * @param schema
     * @return boolean if compatible
     */
-  def checkCompability(subject: String, version: Long, schema: Long): Future[Option[Boolean]]
+  def checkCompability(subject: String, version: Long, schema: String): Future[Option[Boolean]]
 
 
 }
